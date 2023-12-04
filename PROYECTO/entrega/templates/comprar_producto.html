@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contenido %}
+<br>
+<h2>Ingrese el producto a comprar</h2>
+<br>
+<form action='/ventas/comprar_producto/' method="post">
+    {% csrf_token %}
+    <p> Nombre del producto: <input type = "text" name="nombre">
+    <p> Cantidad a comprar: <input type = "number" name="cantidad">
+    <input type = "submit" value="Enviar">
+ </form>
+
+{% if producto %}
+
+    Se compró el producto: {{producto}}, Quedan en stock: {{cantidad_stock}} unidades
+    <br>
+
+{% endif %}
+
+{% endblock %}

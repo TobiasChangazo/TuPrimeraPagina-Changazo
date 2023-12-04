@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contenido %}
+<br>
+<h2>Registre un nuevo cliente</h2>
+<br>
+<form action='/clientes/nuevo_cliente/' method="post">
+    {% csrf_token %}
+    <p> Nombre del Cliente: <input type = "text" name="Nombre">
+    <p> Apellido del Cliente: <input type = "text" name="Apellido">
+    <p> DNI del Cliente: <input type = "number" name="DNI">
+    <input type = "submit" value="Enviar">
+ </form>
+
+{% endblock %}
